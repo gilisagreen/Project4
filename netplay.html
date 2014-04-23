@@ -1,0 +1,287 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src='/_ah/channel/jsapi'></script>
+	<script src="/static/prototype.js"></script>
+	<script src='/static/netplay.js'></script>
+	<script type='text/javascript'>
+      var game = {
+        game_id: '{{ game_id }}',
+        hand: '{{ game_hand }}',
+        token: '{{ token }}',
+        user: '{{ user }}',
+        user_id: '{{ user_id }}',
+        other_player: '{{ other_player }}',
+        i_am_player1: false,
+        myturn: false
+      };
+    </script>
+
+</head>
+<body>
+
+ 
+<nav>
+    {% if user %}
+        <ul>    
+
+             <li class="drop">
+                <a class='menu' href="/">Memory Game</a>
+                
+                <div class="dropdownContain">
+                    <div class="dropOut">
+                        <div class="triangle"></div>
+                        <ul>
+                            <li class="link"><a href="/oneplayer">One Player</a></li>
+                            <li class="link"><a href="/twoplayer">Two Player</a></li>
+                            <li class="link"><a href="/netplay">Network Play</a></li>
+                        </ul>
+                    </div>
+                </div>
+            
+            </li>
+            <li class="drop">
+                <a class='menu'>Hello <span id='playerloggedname'>{{ user.nickname }}</span>!</a>
+                
+                <div class="dropdownContain">
+                    <div class="dropOut">
+                        <div class="triangle"></div>
+                        <ul>
+                            <li onclick="changec()">Change Theme</li>
+                            <li><a href="{{ logout }}">Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            
+            </li>
+        </ul>
+
+        {% else %}
+        <ul>
+            <li class="drop">
+                <a class='menu' href="/">Memory Game</a>
+                
+                <div class="dropdownContain">
+                    <div class="dropOut">
+                        <div class="triangle"></div>
+                        <ul>
+                            <li class="link"><a href="/oneplayer">One Player</a></li>
+                            <li class="link"><a href="/twoplayer">Two Player</a></li>
+                            <li class="link"><a href="/netplay">Network Play</a></li>
+                        </ul>
+                    </div>
+                </div>
+            
+            </li>
+            <li class="drop">
+                <a class='menu'>Hello Guest!</a>
+                
+                <div class="dropdownContain">
+                    <div class="dropOut">
+                        <div class="triangle"></div>
+                        <ul>
+                            <li onclick="changec()">Change Theme</li>
+                            <li><a href="{{ login }}">Sign In</a></li>
+                        </ul>
+                    </div>
+                </div>
+            
+            </li>
+        </ul>
+    {% endif %}
+</nav>
+
+		<td id="game" style="float: left; margin-left: -10px;">
+		<div style="float: left;">
+
+<div id="game_url" class="url"></div>
+<br>
+<br>
+<div id="players">
+  <div id="player1" class="player"><span id="player1_name" class="name"></span><span id="player1_points" class="point"></span></div>
+  <div id="player2" class="player player2"><span id="player2_name" class="name"></span><span id="player2_points" class="point"></span></div>
+</div>
+<div style="width:15%; position:relative; margin: 30px auto;">
+<a class="button2 blue" id="start_new" style="margin: 0px auto;" onclick="createNewGame()">
+    New Game
+    <span>Create a new game!</span>
+</a></div>
+<br>
+<br>
+<div id='hand' class='hand' style="width:84%">
+		<div class='w 4hearts' onclick="F(this)" >
+			<div class="c f">
+				<img src="/static/4_of_hearts.png">
+			</div>
+			<div class="c b">
+				<img src="/static/card_back.jpg">
+			</div>
+		</div>
+
+        <div class='w 10clubs' onclick="F(this)" >
+			<div class="c f">
+				<img src="/static/10_of_clubs.png">
+			</div>
+			<div class="c b">
+				<img src="/static/card_back.jpg">
+			</div>
+		</div>
+        
+        <div class='w 2diamonds' onclick="F(this)">
+			<div class="c f">
+				<img src="/static/2_of_diamonds.png">
+			</div>
+			<div class="c b">
+				<img src="/static/card_back.jpg">
+			</div>
+		</div>
+		
+		<div class='w 6clubs' onclick="F(this)">
+			<div class="c f">
+				<img src="/static/6_of_clubs.png">
+			</div>
+			<div class="c b">
+				<img src="/static/card_back.jpg">
+			</div>
+		</div>
+
+		<div class='w 10clubs' onclick="F(this)">
+			<div class="c f">
+				<img src="/static/10_of_clubs.png">
+			</div>
+			<div class="c b">
+				<img src="/static/card_back.jpg">
+			</div>
+		</div>
+
+		<div class='w 3hearts' onclick="F(this)">
+			<div class="c f">
+				<img src="/static/3_of_hearts.png">
+			</div>
+			<div class="c b">
+				<img src="/static/card_back.jpg">
+			</div>
+		</div>
+
+		<div class='w acespades' onclick="F(this)">
+			<div class="c f">
+				<img src="/static/ace_of_spades.png">
+			</div>
+			<div class="c b">
+				<img src="/static/card_back.jpg">
+			</div>
+		</div>
+
+		<div class='w 9diamonds' onclick="F(this)">
+			<div class="c f">
+				<img src="/static/9_of_diamonds.png">
+			</div>
+			<div class="c b">
+				<img src="/static/card_back.jpg">
+			</div>
+		</div>
+
+		<div class='w 2diamonds' onclick="F(this)">
+			<div class="c f">
+				<img src="/static/2_of_diamonds.png">
+			</div>
+			<div class="c b">
+				<img src="/static/card_back.jpg">
+			</div>
+		</div>
+
+        <div class='w 3hearts' onclick="F(this)">
+			<div class="c f">
+				<img src="/static/3_of_hearts.png">
+			</div>
+			<div class="c b">
+				<img src="/static/card_back.jpg">
+			</div>
+		</div>
+
+		<div class='w 6clubs' onclick="F(this)">
+			<div class="c f">
+				<img src="/static/6_of_clubs.png">
+			</div>
+			<div class="c b">
+				<img src="/static/card_back.jpg">
+			</div>
+		</div>
+
+    	<div class='w acespades' onclick="F(this)">
+			<div class="c f">
+				<img src="/static/ace_of_spades.png">
+			</div>
+			<div class="c b">
+				<img src="/static/card_back.jpg">
+			</div>
+		</div>
+
+		<div class='w 4hearts' onclick="F(this)">
+			<div class="c f">
+				<img src="/static/4_of_hearts.png">
+			</div>
+			<div class="c b">
+				<img src="/static/card_back.jpg">
+			</div>
+		</div>
+
+		<div class='w 7spades' onclick="F(this)">
+			<div class="c f">
+				<img src="/static/7_of_spades.png">
+			</div>
+			<div class="c b">
+				<img src="/static/card_back.jpg">
+			</div>
+		</div>
+
+		<div class='w 7spades' onclick="F(this)">
+			<div class="c f">
+				<img src="/static/7_of_spades.png">
+			</div>
+			<div class="c b">
+				<img src="/static/card_back.jpg">
+			</div>
+		</div>
+
+		<div class='w 9diamonds' onclick="F(this)">
+			<div class="c f">
+				<img src="/static/9_of_diamonds.png">
+			</div>
+			<div class="c b">
+				<img src="/static/card_back.jpg">
+			</div>
+		</div>
+
+</div>
+
+	<div id='buttons'class="buttons">
+
+<!-- 		<a style="cursor:hand;" id="save"class="button2 blue">
+    		Save
+    <span>Play again later.</span>
+</a>
+ -->
+<a class="button2 blue" id="newgame" href="/netplay">
+    New Game
+    <span>Start over.</span>
+</a>
+
+<a class="button2 blue" id="stats">
+   Stats
+   <span>What's your ratings?</span>
+</a>
+	</div>
+</body>
+<script type="text/javascript">
+	var changec = function(){ 
+		var cc = document.getElementsByClassName('b'); 
+		for (var i=0; i < cc.length; i++){
+			cc[i].innerHTML = "<img src='/static/cardback.jpg'>";
+
+		}
+	}
+
+</script>
+</html>

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="width:20%; position: relative; margin: 0px auto;">
+		
+		<a style="cursor:hand;" id="Player1" class="blue" href="/oneplayer">
+    		<h2>1 Player</h2>
+    <span>Test your skills.</span>
+</a>
+<!-- 
+<a href="#" class="button2 blue">
+    Create Account
+</a> -->
+	<a style="cursor:hand;" id="Players"class="blue" href="/twoplayer">
+    		<h2>2 Players</h2>
+     <span>Offline Play.</span> 
+</a>
+
+<a style="cursor:hand;" id="PlayersNetwork"class="blue" href="/netplay">
+    		<h2>Network Play</h2>
+    <span>2 Player online.</span>
+</a>
+	</div>
+{% endblock %}

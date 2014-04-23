@@ -1,0 +1,525 @@
+* {margin: 0; padding: 0;}
+
+body {
+  background: #00a651;
+}
+
+/*HEADER*/
+.header {
+  height: 25px;
+  background: #222;
+  color: #eee;
+  text-align: center;
+  font: 10px/25px Helvetica, Verdana, sans-serif; 
+}
+
+.header a {
+  color: #999;
+}
+
+#hand {
+  margin-left: 150px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  cursor: hand;
+}
+
+/* For modern browsers */
+#hand:before,
+#hand:after {
+    content:"";
+    display:table;
+}
+ 
+#hand:after {
+    clear:both;
+}
+ 
+/* For IE 6/7 (trigger hasLayout) */
+#hand {
+    zoom:1;
+    width: 80%;
+}
+
+
+.w{
+  position: relative;
+  float: left;
+  margin-right: 10px;
+  width: 120px;
+  height: 190px;
+  border-radius: 10px;
+  background: white;
+  -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+  box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+}
+
+.w p {
+  width: 120px;
+  height: 190px;
+  padding-top: 70px;
+  text-align: center;
+  vertical-align: middle;
+  font: 150px/220px Georgia, serif;
+}
+
+/* wrapper for the border of the card */    
+.w{
+
+        text-align:center;
+        vertical-align: middle;
+        margin:10px;
+        float:left;
+        -webkit-transform:rotateY(180deg);
+        -moz-transform:rotateY(180deg);
+        -o-transform:rotateY(180deg);
+        -webkit-transform-style:preserve-3d;
+        -moz-transform-style:preserve-3d;
+        -o-transform-style:preserve-3d;
+        -webkit-transition:0.5s;
+        -moz-transition:0.5s;
+        -o-transition:0.5s    
+    }    
+
+.v,.p{
+    -webkit-transform:rotateY(0);
+    -moz-transform:rotateY(0);
+    -o-transform:rotateY(0);    
+  }    
+
+/* card */    
+.c{       
+    position: relative;
+      float: left;
+  width: 120px;
+  height: 190px;
+  border-radius: 10px;
+    font-size:80px;
+    position:absolute;
+    -webkit-backface-visibility:hidden;
+    -moz-backface-visibility:hidden;
+    -o-backface-visibility:hidden;
+    }   
+
+/* back of the card */    
+.b{        
+      position: relative;
+      float: left;
+      margin-right: 10px;
+      width: 120px;
+        height: 190px;
+      border-radius: 10px;
+      background: white;
+    -webkit-transform:rotateY(180deg);
+    -moz-transform:rotateY(180deg);
+    -o-transform:rotateY(180deg);    
+  }
+
+img{
+  cursor: hand;
+  position: relative;
+  float: left;
+  margin: 5px;
+  width: 110px;
+  height: 180px;
+  border-radius: 10px;
+  background: white;
+}
+
+.red{
+  color: red;
+}
+
+
+/* styling for the save button */
+.blue {
+    float: left;
+    font: 16px Arial;
+    letter-spacing:.5px;
+    text-decoration: none;
+    margin: 20px auto;
+    padding: 20px 30px 20px 25px;
+    width: 170px;
+    border-top-left-radius: 10px 50px;
+    border-bottom-left-radius: 10px 50px;
+    border-top-right-radius: 10px 50px;
+    border-bottom-right-radius: 10px 50px;
+    -moz-border-radius-topleft: 10px 50px;
+    -moz-border-radius-topright: 10px 50px;
+    -moz-border-radius-bottomright: 10px 50px;
+    -moz-border-radius-bottomleft: 10px 50px;
+  
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    cursor: hand;
+  }
+
+#save:hover,
+#Player1:hover,
+#Players:hover {
+    -moz-border-radius-topleft: 30px 50px;
+    -moz-border-radius-topright: 30px 50px;
+    -moz-border-radius-bottomright: 30px 50px;
+    -moz-border-radius-bottomleft: 30px 50px;
+    border-top-left-radius: 30px 50px;
+    border-bottom-left-radius: 30px 50px;
+    border-top-right-radius: 30px 50px;
+    border-bottom-right-radius: 30px 50px;}
+    
+.blue span{
+    display: block;
+    margin: 2px 0 0;
+    font: oblique bold 11px verdana;}
+
+.button2 {
+    text-decoration: none;
+    font: 13px Arial;
+    margin-bottom: -5px;
+    margin: 10px auto;
+    padding: 10px 14px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    }
+
+.button2:hover {
+    -moz-border-radius: 5px;
+    border-radius: 5px;}
+
+
+.blue {
+    margin-right: 20px;
+    color: #fff;
+    background: #48C9FF;
+    background: -webkit-linear-gradient(top, #48C9FF 0%, #2EA8E5 100%);
+    background: -moz-linear-gradient(top, #48C9FF 0%, #2EA8E5 100%);
+    background: -ms-linear-gradient(top, #48C9FF 0%, #2EA8E5 100%);
+    background: -o-linear-gradient(top, #48C9FF 0%, #2EA8E5 100%);
+    background: linear-gradient(to bottom, #48C9FF 0%, #2EA8E5 100%);
+    text-shadow: #29a3cc 0 1px 3px;
+    -webkit-box-shadow:
+        inset 0 1px 0 #38bdf4,
+        inset 0 2px 0 #7bdeff,
+        0 1px 3px #777,
+        0 0px 1px #ccc;
+    -moz-box-shadow:
+        inset 0 1px 0 #38bdf4,
+        inset 0 2px 0 #7bdeff,
+        0 1px 3px #777,
+        0 0px 1px #ccc;
+    box-shadow:
+        inset 0 1px 0 #38bdf4,
+        inset 0 2px 0 #7bdeff,
+        0 1px 3px #777,
+        0 0px 1px #ccc;}
+
+.blue span {
+    color: #217aa6;
+    text-shadow: #78d2f0 0 1px 0;}
+
+
+/* welcome user styling */
+
+#welcome, #playerturn {
+ 
+  color: white;
+  text-transform: uppercase;
+  /*text-shadow: -1px -1px 1px #000000, 1px 1px 1px #CCCCCC;*/
+  text-align: center;
+  margin: 20px;
+
+}
+
+.buttons{
+  width:700px;
+  margin: 0px auto;
+}
+
+
+/*new styles*/
+body {
+    font-family: Verdana, Helvetica, sans-serif;
+    color: #bdd;
+    margin: 0;
+    width: 100%;
+    background: #255;
+}
+/*
+h1 {
+    padding: 1em 2em;
+    background: #577
+
+}*/
+
+h2 {
+    color: #add;
+/*    border-top: 1px dotted #fff;
+    margin-top: 1em*/
+}
+
+a {
+    color: #9ff
+}
+
+p {
+    margin: 1em 0
+}
+
+#login-bar{
+  color: white;
+  font-size: 90%;
+  vertical-align: center;
+  background: black;
+  height: 55px;
+  width: 100%;
+}
+
+#login{
+  position: relative;
+  float:right;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#gamename{
+  position: relative;
+  float: left;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+ 
+
+
+
+ /* NEW STYLE */
+
+ html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td {margin: 0;padding: 0;border: 0;outline: 0;font-size: 100%;vertical-align: baseline;background: transparent;}body {line-height: 1;}ol, ul {list-style: none;}blockquote, q {quotes: none;}blockquote:before, blockquote:after,q:before, q:after {content: '';content: none;} /* remember to define focus styles! */ :focus {outline: 0;} /* remember to highlight inserts somehow! */ins {text-decoration: none;}del {text-decoration: line-through;} /* tables still need 'cellspacing="0"' in the markup */ table {border-collapse: collapse;border-spacing: 0;}
+
+
+/*---------- BODY --------------------------------*/
+
+body {
+  text-align: center;
+  background: #e0e0e0;
+  padding-bottom: 200px;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+/*---------- Wrapper --------------------*/
+
+nav {
+  width: 100%;
+  height: 80px;
+  background: #222;
+}
+
+ul {
+  text-align: center;
+}
+
+ul li {
+  font: 13px Verdana, 'Lucida Grande';
+  cursor: pointer;
+  -webkit-transition: padding .05s linear;
+  -moz-transition: padding .05s linear;
+  -ms-transition: padding .05s linear;
+  -o-transition: padding .05s linear;
+  transition: padding .05s linear;
+}
+ul li.drop {
+  position: relative;
+}
+ul > li {
+  display: inline-block;
+}
+ul li a {
+  /*line-height: 80px;*/
+  /*padding: 20px 20px;*/
+  /*height: 80px;*/
+  color: #777;
+  -webkit-transition: all .1s ease-out;
+  -moz-transition: all .1s ease-out;
+  -ms-transition: all .1s ease-out;
+  -o-transition: all .1s ease-out;
+  transition: all .1s ease-out;
+}
+ul li a:hover {
+  color: #eee;
+}
+
+.dropOut .triangle {
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+  top: -8px;
+  left: 50%;
+  margin-left: -8px;
+}
+.dropdownContain {
+  width: 160px;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  margin-left: -80px; /* half of width */
+  top: -400px;
+}
+.dropOut {
+  width: 160px;
+  background: white;
+  float: left;
+  position: relative;
+  margin-top: 0px;
+  opacity: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 6px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 6px rgba(0,0,0,.15);
+  box-shadow: 0 1px 6px rgba(0,0,0,.15);
+  -webkit-transition: all .1s ease-out;
+  -moz-transition: all .1s ease-out;
+  -ms-transition: all .1s ease-out;
+  -o-transition: all .1s ease-out;
+  transition: all .1s ease-out;
+}
+
+.dropOut ul {
+  float: left;
+  padding: 10px 0;
+}
+.dropOut ul li {
+  text-align: left;
+  float: left;
+  width: 125px;
+  padding: 12px 0 10px 15px;
+  margin: 10px;
+  color: #777;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: background .1s ease-out;
+  -moz-transition: background .1s ease-out;
+  -ms-transition: background .1s ease-out;
+  -o-transition: background .1s ease-out;
+  transition: background .1s ease-out;
+}
+
+.dropOut ul li:hover {
+  background: #f6f6f6;
+}
+
+ul li:hover a { color: #777; }
+ul li:hover .dropdownContain { top: 65px; }
+ul li:hover .underline { border-bottom-color: #777; }
+ul li:hover .dropOut { opacity: 1; margin-top: 8px; }
+
+
+
+
+.w{
+  position: relative;
+  float: left;
+  margin-right: 10px;
+  width: 120px;
+  height: 190px;
+  border-radius: 10px;
+  background: white;
+  -webkit-box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+  box-shadow: 3px 3px 7px rgba(0,0,0,0.3);
+}
+
+.w p {
+  width: 120px;
+  height: 190px;
+  padding-top: 70px;
+  text-align: center;
+  vertical-align: middle;
+  font: 150px/220px Georgia, serif;
+}
+
+/* wrapper for the border of the card */    
+.w{
+
+        text-align:center;
+        vertical-align: middle;
+        margin:10px;
+        float:left;
+        -webkit-transform:rotateY(180deg);
+        -moz-transform:rotateY(180deg);
+        -o-transform:rotateY(180deg);
+        -webkit-transform-style:preserve-3d;
+        -moz-transform-style:preserve-3d;
+        -o-transform-style:preserve-3d;
+        -webkit-transition:0.5s;
+        -moz-transition:0.5s;
+        -o-transition:0.5s    
+    }    
+
+.v,.p{
+    -webkit-transform:rotateY(0);
+    -moz-transform:rotateY(0);
+    -o-transform:rotateY(0);    
+  }    
+
+/* card */    
+.c{       
+    position: relative;
+      float: left;
+  width: 120px;
+  height: 190px;
+  border-radius: 10px;
+    font-size:80px;
+    position:absolute;
+    -webkit-backface-visibility:hidden;
+    -moz-backface-visibility:hidden;
+    -o-backface-visibility:hidden;
+    }   
+
+/* back of the card */    
+.b{        
+      position: relative;
+      float: left;
+      margin-right: 10px;
+      width: 120px;
+        height: 190px;
+      border-radius: 10px;
+      background: white;
+    -webkit-transform:rotateY(180deg);
+    -moz-transform:rotateY(180deg);
+    -o-transform:rotateY(180deg);    
+  }
+
+img{
+  cursor: hand;
+  position: relative;
+  float: left;
+  margin: 5px;
+  width: 110px;
+  height: 180px;
+  border-radius: 10px;
+  background: white;
+}
+
+#players, #game_url, #game_url a, h1, h2{
+  color: grey;
+}
+
+.menu{
+  line-height: 80px;
+  padding: 20px 20px;
+  height: 80px;
+}
